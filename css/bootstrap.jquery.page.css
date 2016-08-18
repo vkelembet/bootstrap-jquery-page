@@ -1,0 +1,8 @@
+.page-content > .page-pane {
+    display: none;
+}
+
+.page-content > .active {
+    display: block;
+}
+
