@@ -10,8 +10,8 @@
 
     <!-- Styles. -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link href="./css/docs.css" rel="stylesheet" type="text/css"/> 
-    <link href="./css/bootstrap.jquery.page.css" rel="stylesheet" type="text/css"/>
+    <link href="./assets/css/docs.css" rel="stylesheet" type="text/css"/> 
+    <link href="./dist/css/bootstrap.jquery.page.css" rel="stylesheet" type="text/css"/>
   </head>
 
   <body>
@@ -138,44 +138,8 @@
     <!-- Scripts. -->
     <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="./js/bootstrap.jquery.page.js"></script>
-    <script>
-      $(function() {
-        $('#test').click(function(e) {
-          e.preventDefault();
-          $('#page-three').page('show');
-        }); 
-
-        function getTextInsideParent($element) {
-          return $element
-            .clone()    //clone the element
-            .children() //select all the children
-            .remove()   //remove all the children
-            .end()      //again go back to selected element
-            .text();
-        };
-
-        $('#pages').on('shown.bs.page', function (e) {
-
-          var $newlyActivatedPage = $(e.target),
-              $newlyActivatedPageTitle = $newlyActivatedPage.find('.panel-title'),
-              $prevActivePage = $(e.relatedTarget),
-              $prevActivePageTitle = $prevActivePage.find('.panel-title'),
-              title = getTextInsideParent($prevActivePageTitle);
-          
-          $prevActivePageTitle
-            .find('.label')
-            .text('')
-            .addClass('invisible');
-          
-          // Show previous active page title in newly activated page title.
-          $newlyActivatedPageTitle
-            .find('.label')
-            .removeClass('invisible')
-            .text('Previous active page: ' + title);
-        })
-      });
-    </script>
+    <script src="./dist/js/bootstrap.jquery.page.js"></script>
+    <script src="./assets/js/app.js"></script>
   </body>
 
 </html>
